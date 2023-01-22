@@ -1,0 +1,113 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="../css/style.css" type="text/css"/>
+
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="apple-touch-icon" href="../icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="../css/normalize.css">
+  <link rel="stylesheet" href="../css/main.css">
+
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<div id = "upper-part">
+  <div id="upper-background">
+    <img src="/resources/images/vinyl_v2.png" style="height: 80px;width: 80px;margin: 20px;"/>
+    <p style="color:white; margin-left:15px; font-size: 2em; font-weight: bold; align-self: center">ButMusic</p>
+  </div>
+
+  <!-- Верхнее меню сайта -->
+  <div id="top-menu">
+    <button id = "main-button" class="top-menu-button" onclick="showMainPage()">Main</button>
+    <button id = "favourite-button" class="top-menu-button" onclick="showFavouritePage()">Favourite</button>
+  </div>
+</div>
+
+<!-- Панель со списком песен -->
+<div id="basic">
+  <div style="display: flex; align-items: center; justify-content: end;">
+    <button id="addNewTrack" class="add-button" data-open="modal1" onclick="openAddTrackDialogWindow()">Add</button>
+  </div>
+
+  <div id = "tracks">
+    <ul id = "tracks-list" style="margin-top: 0">
+      <li>
+        <p style="margin-left: 10px">#</p>
+        <p></p>
+        <button style="margin: 0">Title</button>
+        <image src="/resources/images/clock.png" style="height: 20px; width:20px; margin: 0"></image>
+        <p></p>
+      </li>
+   </ul>
+ </div>
+
+  <!-- Меню проигрывателя -->
+ <div id="play-menu">
+   <p id = "track-name" class="play-menu-labels" style="margin-right: auto; margin-left: 10px">Doors - The End</p>
+   <div style="display: flex; align-items: center; justify-content: center">
+     <input type="image" id = "previous-button" class="play-menu-buttons" src="/resources/images/previous_v2.png" onclick="playPrevious()">
+     <input type="image" id = "play-stop-button" class="play-menu-buttons" src="/resources/images/play_v2.png">
+     <input type="image" id = "next-button" class="play-menu-buttons" src="/resources/images/next_v2.png" onclick="playNext()">
+   </div>
+   <p id = "current-track-time" class="play-menu-labels" style="margin-left: auto; margin-right: 10px">0:00/0:00</p>
+ </div>
+
+  <input type="range" min="1" max="1000" value="0" class="seek_slider" onchange="seekTo()">
+
+  <!-- Диалоговое окно добавления новой песни -->
+ <div id="modal1" class="modal">
+   <!-- Modal content -->
+    <div class="modal-content">
+      <div style="display: flex; align-items: center; justify-content: start;">
+        <p style="font-size: 20px; color:white">Add New Track</p>
+      </div>
+      <div style="display: grid; grid-template-columns: 12% 88%; align-items: center; justify-items: start;">
+        <p>MP3 Link: </p>
+        <input type="text" id = "link-field" class="input-field">
+        <p>Track Name: </p>
+        <input type="text" id = "track-name-field" class="input-field">
+      </div>
+      <div style="display: flex; margin-top: 20px; align-items: center; justify-content: end">
+        <button id = "cancel-track-adding" class="add-button" onclick="cancelAddTrackDialogWindow()">Cancel</button>
+        <button id = "add-track" class="add-button" onclick="addNewTrack()">Add New Track</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="../js/vendor/modernizr-3.11.2.min.js"></script>
+<script src="../js/plugins.js"></script>
+<script src="../js/main.js"></script>
+
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<!--
+<script>
+  window.ga = function () {
+    ga.q.push(arguments)
+  };
+  ga.q = [];
+  ga.l = +new Date;
+  ga('create', 'UA-XXXXX-Y', 'auto');
+  ga('set', 'anonymizeIp', true);
+  ga('set', 'transport', 'beacon');
+  ga('send', 'pageview')
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async></script>
+-->
+</body>
+
+</html>

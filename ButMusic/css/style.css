@@ -1,0 +1,280 @@
+/*Каркас сайта*/
+
+/*Переменные*/
+:root {
+  --black-text-color: black;
+  --white-text-color: white;
+  --hover-text-color: #c300ef;
+
+  --background-color: black;
+  --second-background-color: #a700cc;
+  --play-menu-color: black;
+  --button-background-color: #e6e6e6;
+}
+
+div h1,
+h2 {
+  margin-left: 2em;
+}
+
+#upper-part {
+
+}
+
+#upper-background {
+  display: flex;
+}
+
+#basic {
+  width: auto;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background: black;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/*Верхнее меню сайта*/
+#top-menu {
+  display: flex;
+  height: 70px;
+  width: 100%;
+
+  background-image: -webkit-linear-gradient(top, #490059 0%, var(--background-color) 100%);
+
+  border-width: 2px;
+  border-bottom-color:var(--white-text-color);
+  border-top-color:var(--white-text-color);
+  border-bottom-style: solid;
+  border-top-style: solid;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.top-menu-button {
+  height: 100%;
+  width: 200px;
+
+  color: var(--white-text-color);
+  background: transparent;
+
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  border: none;
+}
+
+.top-menu-button:hover {
+  color: var(--hover-text-color);
+}
+
+/*Список треков*/
+#tracks {
+  margin: 0 60px 100px 60px;
+  overflow: auto;
+
+  color: var(--white-text-color);
+  background-color: transparent;
+
+  border-radius: 20px;
+}
+
+#tracks ul li {
+  display: grid;
+  grid-template-columns: 10% 10% 60% 15% 5%;
+  height: 40px;
+  width: 100%;
+  padding-top: 10px;
+
+  border-width: 1px;
+  border-bottom-color:var(--white-text-color);
+  border-bottom-style: solid;
+
+  align-items: center;
+  font-size: 18px;
+}
+
+#tracks ul li:hover {
+  background-image: -webkit-linear-gradient(top, #490059 0%, var(--background-color) 100%);
+}
+
+#tracks ul li button {
+  display: flex;
+  margin: 0;
+  overflow: hidden;
+
+  background-color: transparent;
+  color:var(--white-text-color);
+
+  border: none;
+
+  align-items: center;
+  justify-content: start;
+
+  cursor: pointer;
+}
+
+#tracks ul li p {
+  margin:0;
+}
+
+#tracks ul li button:hover {
+  color: var(--white-text-color);
+}
+
+.like-button {
+  width: 25px;
+  height: 25px;
+  margin: 0;
+}
+
+.trash-button {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+}
+
+.add-button {
+  height: 40px;
+  width: 160px;
+  margin: 20px 60px 20px 0;
+  float: right;
+
+  color: var(--white-text-color);
+  background-color: transparent;
+
+  font-size: 16px;
+  vertical-align: center;
+
+  border-width: 2px;
+  border-color:var(--white-text-color);
+  border-style: solid;
+  border-radius: 16px;
+}
+
+.add-button:hover {
+  color: var(--hover-text-color);
+}
+
+.seek_slider {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  margin-bottom: 70px;
+  width: 100%;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  height: 5px;
+  background: var(--button-background-color);
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.seek_slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background: var(--hover-text-color);
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+/*Меню воспроизведения*/
+#play-menu {
+  display: grid;
+  grid-template-columns: 40% 20% 40%;
+  height: 60px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+
+  background-image: -webkit-linear-gradient(top, #490059 0%, var(--background-color) 100%);
+  border-width: 1px;
+  border-top-color:var(--white-text-color);
+  border-top-style: solid;
+
+  justify-items: center;
+}
+
+.play-menu-buttons {
+  height: 30px;
+  width: 30px;
+  margin: 0 25px;
+
+  cursor: default;
+}
+
+.play-menu-labels {
+  color: var(--white-text-color);
+
+  font-size: 18px;
+}
+
+/*Модульное окно добавления нового трека*/
+.modal {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  width: 80%;
+  margin: 15% auto;
+  padding: 20px;
+
+  background-color: var(--background-color);
+  color: white;
+
+  border-radius: 10px;
+  border: 1px solid #888;
+}
+
+.modal-content input {
+  background-color: var(--white-text-color);
+  color: var(--black-text-color);
+}
+
+.input-field {
+  height: 20px;
+  width: 600px;
+  margin-left: 10px;
+
+  background-color: #0a0a0a;
+  background-clip: padding-box;
+
+  border: 1px solid #bdbdbd;
+  border-radius: 0.25rem;
+}
+
+/* The Close Button */
+.close {
+  float: right;
+
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
