@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ab11bcc9-8fac-4e39-b6a2-a18da8df78f8" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/ButMusic/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/ButMusic/404.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ButMusic/browserconfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ButMusic/browserconfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ButMusic/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/ButMusic/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ButMusic/css/normalize.css" beforeDir="false" afterPath="$PROJECT_DIR$/ButMusic/css/normalize.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ButMusic/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/ButMusic/html/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ButMusic/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/ButMusic/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ButMusic/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/ButMusic/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ButMusic/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/ButMusic/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ButMusic/site.webmanifest" beforeDir="false" afterPath="$PROJECT_DIR$/ButMusic/site.webmanifest" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2LuqIUzsUDnqPUQXsJW1SoTOvIx" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$USER_HOME$/IdeaProjects/DirectedAcyclicGraph" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ab11bcc9-8fac-4e39-b6a2-a18da8df78f8" name="Changes" comment="" />
+      <created>1676731236132</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1676731236132</updated>
+      <workItem from="1676731238636" duration="14000" />
+      <workItem from="1677265548633" duration="14000" />
+      <workItem from="1677266005569" duration="690000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

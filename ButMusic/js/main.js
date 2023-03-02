@@ -1,11 +1,11 @@
-const tracksList = document.getElementById("tracks-list")
-const playStopButton = document.getElementById("play-stop-button")
+const tracksList = document.getElementById("tracks-list");
+const playStopButton = document.getElementById("play-stop-button");
 const seek_slider = document.querySelector(".seek_slider");
 
-var audioDict = []
-var audioList = []
+var audioDict = {};
+var audioList = [];
 
-var favouriteAudioList = []
+var favouriteAudioList = [];
 
 var currentPlayingTrack = null;
 var currentPlayingTrackIndex = -1;
@@ -18,6 +18,34 @@ document.addEventListener("click", e => {
     document.querySelector(".modal.is-visible").classList.remove(isVisible);
   }
 });
+
+window.addEventListener("unload", function(e){
+  saveToLocalStorage();
+}, false);
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  loadFromLocalStorage();
+  loadAllTracks();
+}, false);
+
+function loadFromLocalStorage() {
+  audioList = JSON.parse(localStorage.getItem('tracks'));
+  favouriteAudioList = JSON.parse(localStorage.getItem('favouriteTracks'));
+  audioDict = JSON.parse(localStorage.getItem('tracksLinks'));
+
+  if (audioList == null || favouriteAudioList == null || audioDict == null) {
+    audioDict = {};
+    audioList = [];
+    favouriteAudioList = [];
+  }
+}
+
+function saveToLocalStorage() {
+  localStorage.setItem('tracks', JSON.stringify(audioList));
+  localStorage.setItem('favouriteTracks', JSON.stringify(favouriteAudioList));
+  localStorage.setItem('tracksLinks', JSON.stringify(audioDict))
+}
 
 function showMainPage() {
   loadAllTracks();
@@ -58,11 +86,11 @@ function addNewTrack() {
 playStopButton.addEventListener("click", function () {
   if (isPlaying) {
     currentPlayingTrack.pause();
-    playStopButton.src = "/resources/images/play_v2.png";
+    playStopButton.src = "../resources/images/play_v2.png";
     isPlaying = false;
   } else {
     currentPlayingTrack.play();
-    playStopButton.src = "/resources/images/pause_v2.png"
+    playStopButton.src = "../resources/images/pause_v2.png"
     isPlaying = true;
   }
 });
@@ -100,7 +128,7 @@ function playTrackByName(name) {
   currentPlayingTrack.play();
   isPlaying = true;
 
-  playStopButton.src = "/resources/images/pause_v2.png"
+  playStopButton.src = "../resources/images/pause_v2.png"
 }
 
 function updateTimeLabel(){
@@ -133,7 +161,7 @@ function addTrack(link, trackName) {
   audioDict[trackName] = link;
   audioList.push(trackName);
 
-  addTrackListItem(link, trackName, audioList.length.toString())
+  addTrackListItem(link, trackName, audioList.length.toString());
 }
 
 function addTitleListItem() {
@@ -152,7 +180,7 @@ function addTitleListItem() {
   trackTimeLabel.style.height = "20px";
   trackTimeLabel.style.width = "20px";
   trackTimeLabel.style.margin = "0";
-  trackTimeLabel.src = "/resources/images/clock.png";
+  trackTimeLabel.src = "../resources/images/clock.png";
   let deleteButton = document.createElement("p");
 
   li.appendChild(indexLabel);
@@ -197,19 +225,19 @@ function createLikeButton(trackName) {
   likeButton.setAttribute("class", "like-button")
 
   if (favouriteAudioList.includes(trackName)) {
-    likeButton.setAttribute("src", "/resources/images/filled_heart_v2.png")
+    likeButton.setAttribute("src", "../resources/images/filled_heart_v2.png")
   } else {
-    likeButton.setAttribute("src", "/resources/images/empty_heart_v2.png")
+    likeButton.setAttribute("src", "../resources/images/empty_heart_v2.png")
   }
 
   likeButton.addEventListener('click',function(){
     if (favouriteAudioList.includes(trackName)) {
-      this.src = "/resources/images/empty_heart_v2.png";
+      this.src = "../resources/images/empty_heart_v2.png";
       favouriteAudioList.splice(favouriteAudioList.indexOf(favouriteAudioList.indexOf(trackName)));
       return;
     }
 
-    this.src = "/resources/images/filled_heart_v2.png";
+    this.src = "../resources/images/filled_heart_v2.png";
     favouriteAudioList.push(trackName);
   });
 
@@ -245,11 +273,11 @@ function createDeleteButton(li, trackName) {
 
   deleteButton.setAttribute("type", "image");
   deleteButton.setAttribute("class", "trash-button")
-  deleteButton.setAttribute("src", "/resources/images/trash.png")
+  deleteButton.setAttribute("src", "../resources/images/trash.png")
 
   deleteButton.addEventListener('click',function(){
     audioList.splice(audioList.indexOf(trackName),1);
-    audioDict.splice(audioList.indexOf(trackName),1);
+    delete audioDict[trackName];
     tracksList.removeChild(li);
   });
 
